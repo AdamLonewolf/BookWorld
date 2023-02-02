@@ -12,14 +12,16 @@ class GenreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($genre)
     {
-        //
+        if($genre == ""){
+            $books = Book::all();
+            return view('/boutique', compact('books'));
+        }
+        $books = Book::where('genre', $genre)->get();
+        return view('/boutique', compact('books'));
     }
-    public function filter($genre){
-        $genre = Book::findOrFail($genre);
-        return view('livres')->with("genre", $genre);
-    }
+ 
 
     /**
      * Show the form for creating a new resource.

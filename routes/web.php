@@ -25,4 +25,4 @@ Route::get('/boutique', function () {
 
 Route::get('/boutique', [BookController::class, "index"]);
 Route::get('/livres/{id}', [BookController::class, "show"])->name('Voir_livres');
-Route::get('/livres/{genre}', [GenreController::class,"filter"]);
+Route::get('/boutique/{genre?}', [GenreController::class, "index"])->name('genre');

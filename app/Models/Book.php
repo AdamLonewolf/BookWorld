@@ -19,9 +19,4 @@ class Book extends Model
         'prix',
         'genre',
     ];
-
-    public function genre()
-    {
-        return $this->belongsTo('App\genre');
-    }
 }
