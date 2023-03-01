@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->string('titre');
-            $table->string('auteur');
-            $table->string('resume');
+            $table->string('resume',10000);
             $table->integer('prix');
-            $table->string('genre');
             $table->timestamps();
         });
     }

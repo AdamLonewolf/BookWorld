@@ -19,4 +19,19 @@ class Book extends Model
         'prix',
         'genre',
     ];
+
+    /**
+     * Cette fonction montre que ce modèle appartient au model Genre.
+     */
+        public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
+
+    /**
+     * Cette fonction montre que ce modèle appartient au model Auteur.
+     */
+    public function auteur(){
+        return $this->belongsTo(Auteur::class);
+    }
 }

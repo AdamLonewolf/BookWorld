@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('role')->default('Utilisateur');
-            $table->timestamps();
+        Schema::table('books', function (Blueprint $table) {
+            $table->unsignedBigInteger('auteur_id')->nullable();
+            $table->foreign('auteur_id')->references('id')->on('auteurs')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -30,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::table('books', function (Blueprint $table) {
+            $table->dropForeign('auteur_id');
+            $table->dropColumn('auteur_id');
+        });
     }
 };

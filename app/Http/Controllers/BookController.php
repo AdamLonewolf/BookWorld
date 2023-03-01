@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Genre;
 use Illuminate\Http\Request;
-
+use Illuminate\Http\Response;
 class BookController extends Controller
 {
     /**
@@ -15,47 +16,35 @@ class BookController extends Controller
     public function index()
     {
         //On récupère toutes les données de la bdd
-
-        $books = Book::all();
+        $genres = Genre::all();
+        $books = Book::paginate(8);
 
         //On retourne les valeurs à la vue Boutique
 
-        return view('/boutique', compact('books'));
+        return view('boutique', compact('books', 'genres'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+ 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
+        //Affiche les détails de chaque livre ainsi que des livres aléatoires qui pourraient intéresser le client
+
+        $counter = 0;
+        $max_loops = 100;
         $books = Book::findOrFail($id);
-        return view('livres')->with("books", $books);
+
+        /*générateur aléatoire de livres*/
+
+        $Alea = Book::inRandomOrder()->limit(3)->pluck('id')->toArray(); //Je veux que dans la colonne id, il me récupère les id, les mélange et en prenne que 3.
+
+        while(in_array($id, $Alea) && $counter < $max_loops){
+            $Alea = Book::inRandomOrder()->limit(3)->pluck('id')->toArray();
+        }
+
+        $booksAlea = Book::whereIn('id', $Alea)->get(); //Filtre qui me permettra de renvoyer unique les informations des 3 id qui seront sélectionnés aléatoirement dans $alea
+        
+        return view('livres',compact('books', 'booksAlea'));
     }
 
     /**
