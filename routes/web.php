@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\AuteurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-
 //Route pour la boutique et les détails sur les livres
 Route::get('/boutique', [BookController::class, "index"])->name('boutique');
 Route::get('/livres/{id}', [BookController::class, "show"])->name('Voir_livres');
@@ -34,6 +34,7 @@ Route::get('/genre/{id}', [GenreController::class, "showByGenre"])->name('genre'
 //Route pour la liste des auteurs et les informations sur les auteurs
 
 Route::get('/auteur_list', [AuteurController::class, "index"])->name('auteur_list');
+Route::get('/auteurs/{id}', [AuteurController::class, "show"])->name('auteurs');
 
 
 //Authentication de l'utilisateur 

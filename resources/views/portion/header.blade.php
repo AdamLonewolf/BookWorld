@@ -1,10 +1,7 @@
 <header >
-  <nav class=" my-navbar navbar navbar-expand-lg navbar-light fixed-top" style="position: relative !important;">
+  <nav class=" my-navbar navbar navbar-expand-lg navbar-light" style="position: relative !important;">
     <div class="container">
       <a class="navbar-brand" href="{{route('home')}}" style="font-size: 25px; font-weight:bold"><i class="fa-solid fa-book mx-3"></i>Book<span style="color: #FEBE8C">W</span>orld</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
   
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">

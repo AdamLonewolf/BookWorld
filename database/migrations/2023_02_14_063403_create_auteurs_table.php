@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('biographie',10000);
+            $table->string('image');
             $table->timestamps();
         });
     }

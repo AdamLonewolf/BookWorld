@@ -1,17 +1,29 @@
 @extends('layout.layout')
 @section('content')
+
 @include('portion.header')
- <!-- Banner-->
- <div class="bg-dark banner d-flex justify-content-center align-items-center" style="height: 350px !important; background-image:url(/img/banner.jpeg); background-position:center center; background-repeat:no-repeat; background-size:cover; position: relative;">
-    <div class="overlay" style="width:100%; height:100%; background-color:#5A5A5A; position:absolute; opacity:0.4; z-index:1000"></div>
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder" style="z-index: 1000; position:relative"></h1>
-        </div>
-    </div>
-</div>
+
 
 <main class="p-5">
- 
+    <div class="banner">
+        <h3>Liste des auteurs</h3>
+    </div>
+<div class="container px-4 px-lg-5 mt-5">
+    <div class="row justify-content-center align-items-center">
+        @foreach ($auteur as $aut)
+        <div class="col-3">
+            <div class="element my-5 mx-5" style="width:220px; height:300px; border-radius:20px">
+                <a href="{{route('auteurs', ["id" => $aut->id])}}">
+                    <img src="{{URL::to('img/auteurs/'.$aut->image)}}" class="" alt="{{$aut->image}}" style="border-radius:20px ; height:100%; width:100%;">
+                    <p class="mt-2 fs-5 mx-2">{{$aut->nom}}</p>
+                </a>      
+            </div> 
+        </div>
+        @endforeach
+    </div>
+</div>   
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        {{$auteur->links()}}
+    </div>
 </main>
 @endsection

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Auteur extends Model
 {
@@ -16,12 +17,7 @@ class Auteur extends Model
         'biographie',
     ];
 
-
-    /**
-     * Cette fonction montre qu'un Auteur détient plusieurs livres.
-     */
-
      public function oeuvres(){
-        $this->hasMany(Book::class, "auteur_id");
+       return $this->hasMany(Book::class, "auteur_id");
      }
 }

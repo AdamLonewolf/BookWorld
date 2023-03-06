@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @section('content')
 
-<h1>bienvenue</h1>
+@include('admin.admin_portion.header')
 
 @endsection

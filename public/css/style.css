@@ -167,6 +167,22 @@
   color: red;
 }
 
+/*Auteurs*/
+
+.element a{
+  text-decoration: none;
+}
+
+.element p{
+  color: #000;
+  font-weight: 600;
+  margin:15px 0px;
+}
+
+
+/*Dashboard*/
+
+
   /* ================================= 
     Media Queries
   ==================================== */
