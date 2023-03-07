@@ -18,11 +18,11 @@
     <link href="{{ URL::to('css/style.css') }} " rel="stylesheet" />
 </head>
 
-<body style="background: linear-gradient(to right, #76b852, #8dc26f); ">
+<body style="background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);">
     @foreach ($errors->all() as $error)
     <div>{{$error}}</div>
 @endforeach
-    <form class="form-new" action="{{route('store_livre')}}" method="POST" enctype="multipart/form-data">
+    <form class="form-new-livre p-5" action="{{route('store_livre')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <h3 class="text-center my-3">Enregistrement d'un livre</h3>
         <div class="wrapper-bloc d-flex">
@@ -64,11 +64,12 @@
                     <input class="form-control" type="file" name="image" id="image">
                 </div>
             </div>
+            <div class="form-btn d-flex justify-content-center align-items-center my-5">
+                <button type="submit" id="submit" name="submit" style="width:50%" class="btn-submit btn-form">Enregistrer</button>
+            </div>
             </div>
         </div>
-        <div class="form-btn">
-          <button type="submit" id="submit" name="submit" style="width:50%" class="btn-submit">Enregistrer un livre</button>
-      </div>
+        
     </form>
 </body>
 

@@ -27,7 +27,7 @@
                         <td>{{ $book->prix }}</td>
                         <td>{{ $book->genre->nom }}</td>
                         <td>
-                            <a href="{{route('edit_livre', ['id'=>$book->id])}}" class="modifier">
+                            <a href="{{route('edit_livre', ['id'=>$book->id])}}" class="btn-modifier">
                                 <i class="bi bi-pencil-square"></i>
                                 Modifier
                             </a>
@@ -36,7 +36,7 @@
                             <form class="form-delete" action="{{route('delete_livre')}}" method="post">
                                 @csrf
                                   <input type="hidden" name="id" value="{{ $book->id }}">
-                                  <button class="supprimer mx-3" style="border:none"><i class="bi bi-trash-fill"></i> Supprimer</button>
+                                  <button class="btn-supprimer mx-3" style="border:none"><i class="bi bi-trash-fill"></i> Supprimer</button>
                                </form>
                         </td>
                     </tr>

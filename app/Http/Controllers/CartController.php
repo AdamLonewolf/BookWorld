@@ -74,14 +74,26 @@ class CartController extends Controller
      $cart = session()->get('cart' . auth()->id());
 
      //Fonction pour calculer le total de tous les éléments du panier
-
-    $total = 0; //Le total est à zéro par défaut
+    $total = 0;
+    $tva = 0; //Le total est à zéro par défaut
+    $subtotal = 0; //Le sous-total
 
     foreach($cart as $product){
-     $total += ($product['prix'] * $product['quantite']); //On fait un boucle for each pour recuperer le prix et la quantité de chaque produit, puis on les multiplie.
+      $subtotal = ($product['prix'] * $product['quantite']); //La quantité fois le prix pour trouver le sous total
+     }
+
+
+    foreach($cart as $product){
+     $tva += ($subtotal / 100 * 20); //On fait un boucle for each pour recuperer le prix et la quantité de chaque produit, puis on les multiplie.
     }
+
+    $total = $subtotal + $tva; 
+
+    
+
+
    
-     return view('cart', compact('cart','total'));
+     return view('cart', compact('cart','total','subtotal','tva'));
 
     }
 

@@ -18,15 +18,15 @@
     <link href="{{ URL::to('css/style.css') }} " rel="stylesheet" />
 </head>
 
-<body style="background: linear-gradient(to right, #76b852, #8dc26f); ">
+<body style="background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);">
     @foreach ($errors->all() as $error)
         <div>{{$error}}</div>
     @endforeach
-    <form class="form-new" action="{{route('store_auteur')}}" method="POST" enctype="multipart/form-data">
+    <form class="form-new p-5" action="{{route('store_auteur')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <h3 class="text-center my-3">Enregistrer un auteur</h3>
+        <h3 class="text-center">Enregistrer un auteur</h3>
         <div class="wrapper-bloc d-flex">
-            <div class="bloc-1 p-3">
+            <div class="bloc-1 p-5">
                 <div class="form-group my-3">
                     <label for="name">Nom de l'auteur</label>
                     <input type="text" class="form-control" id="nom" name="nom"
@@ -43,11 +43,13 @@
                     <input class="form-control" type="file" name="image" id="image">
                 </div>
             </div>
+            <div class="form-btn d-flex justify-content-center align-items-center my-5">
+                <button type="submit" id="submit" name="submit" style="width:50%" class="btn-submit btn-form" style="">Enregistrer</button>
             </div>
+            </div>
+           
         </div>
-        <div class="form-btn">
-          <button type="submit" id="submit" name="submit" style="width:50%" class="btn-submit">Enregistrer un auteur</button>
-      </div>
+       
     </form>
 </body>
 

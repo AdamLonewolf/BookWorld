@@ -24,7 +24,7 @@
                         <th scope="row">{{ $auteurs->nom}}</th>
                         <td>{{ $auteurs->oeuvres->count()}}</td>
                         <td>
-                            <a href="{{route('edit_auteur', ['id'=>$auteurs->id])}}" class="modifier">
+                            <a href="{{route('edit_auteur', ['id'=>$auteurs->id])}}" class="btn-modifier">
                                 <i class="bi bi-pencil-square"></i>
                                 Modifier
                             </a>    
@@ -33,7 +33,7 @@
                             <form class="form-delete" action="{{route('delete_auteur')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $auteurs->id }}">
-                                <button class="supprimer mx-3" style="border:none"><i class="bi bi-trash-fill"></i>Supprimer</button>
+                                <button class="btn-supprimer mx-3" style="border:none"><i class="bi bi-trash-fill mx-2"></i>Supprimer</button>
                             </form>
                         </td>
                     </tr>

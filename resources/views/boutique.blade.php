@@ -38,7 +38,7 @@
                @foreach ($books as $book)
                <div class="col mb-5">
                 <a href="{{Route('Voir_livres',["id" => $book->id])}}" class="cardlink" style="text-decoration:none">
-                <div class="card" style="border:none;">
+                <div class="card" style="border:none;background-color:transparent">
                     <!-- Product image-->
                     <div class="card-img-top" style="height:300px !important; width:230px ">
                         <img  src="{{URL::to('img/'. $book->image)}}" alt=" {{$book->titre}}" style="width:100%; height:100% ; border-radius:10px !important" />

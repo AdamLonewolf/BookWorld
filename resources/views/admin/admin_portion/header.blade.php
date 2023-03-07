@@ -160,7 +160,7 @@ nav.open ~ .overlay {
 
           <div class="bottom-content">
             <li class="list">
-              <a href="#" class="nav-link">
+              <a href="{{route('home')}}" class="nav-link">
                 <i class="bx bx-log-out icon"></i>
                 <span class="link">Accueil BookWorld</span>
               </a>
