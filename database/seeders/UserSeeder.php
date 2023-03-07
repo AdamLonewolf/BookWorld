@@ -19,9 +19,9 @@ class UserSeeder extends Seeder
 
         //J'enregistre mes données dans la bdd (admin)
         $user = new User();
-        $user->name = "Adam Coulibaly";
-        $user->email = "ismomee2403@gmail.com";
-        $user->password = Hash::make("meesmo2403");
+        $user->name = "Jacob";
+        $user->email = "jacob@gmail.com";
+        $user->password = Hash::make("1010");
         $user->role = "admin";
         $user->save();
     }
