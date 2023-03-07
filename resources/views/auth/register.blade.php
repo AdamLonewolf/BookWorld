@@ -16,7 +16,7 @@
         
     </head>
 
-<body style="background-color:aquamarine">
+<body style="background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);">
     @if($errors->all())
     <div class="alert alert-danger alerte my-3"  role="alert">
         @foreach ($errors->all() as $error)
@@ -25,7 +25,7 @@
     </div>
     @endif
     
-    <form class="form-auth" action="{{route('register')}}" method="POST">
+    <form class="form-auth-register" action="{{route('register')}}" method="POST">
         @csrf    
         <div class="wrapper-bloc d-flex">
             <div class="bloc-1">
@@ -44,12 +44,16 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="password" class="my-2">Mot de passe</label>
-                    <input type="text" class="form-control" id="password" name="password"
+                    <input type="password" class="form-control" id="password" name="password"
                         placeholder="Mot de passe">
                 </div>
-                <span>Vous avez déjà un compte ? <a href="{{route('login_page')}}">connectez-vous</a></span>
-                <div class="form-btn">
-                    <button type="submit" id="submit" name="submit" style="width:50%" class="btn-submit">Créer un compte</button>
+
+                <div class="d-flex justify-content-center align-items-center">
+                    <span style="font-size:16px;">Vous avez déjà un compte ? <a href="{{route('login_page')}}" style="color:#FE7D4E;">connectez-vous</a></span>
+                </div>
+               
+                <div class="form-btn d-flex justify-content-center align-items-center my-4">
+                    <button type="submit" id="submit" name="submit" style="" class="btn-submit btn-form">Créer un compte</button>
                 </div>
                         
             </div>    

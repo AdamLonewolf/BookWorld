@@ -19,7 +19,7 @@
 <style>
 
 nav {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   height: 70px;
@@ -145,13 +145,13 @@ nav.open ~ .overlay {
               </a>
             </li>
             <li class="list">
-              <a href="#" class="nav-link">
+              <a href="{{route('table_livre')}}" class="nav-link">
                 <i class="fa-solid fa-book"></i>
                 <span class="link">Livres</span>
               </a>
             </li>
             <li class="list">
-              <a href="#" class="nav-link">
+              <a href="{{route('table_auteur')}}" class="nav-link">
                 <i class="fa-solid fa-user"></i>
                 <span class="link">Auteurs</span>
               </a>

@@ -1,7 +1,7 @@
 <header >
   <nav class=" my-navbar navbar navbar-expand-lg navbar-light" style="position: relative !important;">
     <div class="container">
-      <a class="navbar-brand" href="{{route('home')}}" style="font-size: 25px; font-weight:bold"><i class="fa-solid fa-book mx-3"></i>Book<span style="color: #FEBE8C">W</span>orld</a>
+      <a class="navbar-brand" href="{{route('home')}}" style="font-size: 25px; font-weight:bold">Book<span style="color: #FE7D4E">W</span>orld.</a>
   
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
@@ -23,12 +23,12 @@
         {{-- si l'utilisateur est connecté, alors le bouton devient "se déconnecter" --}}
           <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" style="margin-left:40px;" class="btn-logout"><i class="fa-solid fa-right-to-bracket" style="color: #262626; font-size:17px; Margin: 0px 10px"></i>Se déconnecter</button>
+            <button type="submit" style="margin-left:40px; position: relative; top:10px" class="btn-logout d-flex justify-content-center align-items-center"><i class="fa-solid fa-right-to-bracket" style=" font-size:16px; Margin: 0px 6px"></i>Se déconnecter</button>
         </form>
         @else
         {{-- si l'utilisateur n'est, alors le bouton devient "se connecter" --}}
         <div class="div-auth" style="margin-left:40px">
-          <a href="{{route('login_page')}}" style=""></i>Se connecter</a>
+          <a href="{{route('login_page')}}" class="btn-login" style=""></i>Se connecter</a>
         </div>
         @endif
     </div>

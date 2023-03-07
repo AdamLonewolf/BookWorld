@@ -16,7 +16,7 @@
         
     </head>
 
-	<body style="background-color:aquamarine">
+	<body style="background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);">
         @if($errors->all())
         <div class="alert alert-danger alerte my-3"  role="alert">
             @foreach ($errors->all() as $error)
@@ -41,9 +41,13 @@
                     <input type="password" class="form-control" id="password" name="password"
                         placeholder="Mot de passe">
                 </div>
-                <span>Vous n'avez aucun compte ?  <a href="{{route('register_page')}}">créer un compte</a></span>
-                <div class="form-btn">
-                    <button type="submit" id="submit" name="submit" style="width:25%" class="btn-submit">Connexion</button>
+
+                <div class="d-flex justify-content-center align-items-center">
+                    <span class="" style="font-size:18px;">Vous n'avez aucun compte ?  <a href="{{route('register_page')}}" style="text-decoration: none; color:#FE7D4E;">créer un compte</a></span>
+                </div>
+
+                <div class="form-btn my-4 d-flex justify-content-center align-items-center">
+                    <button type="submit" id="submit" name="submit" style="" class="btn-submit btn-form">Connexion</button>
                 </div>
                         
             </div>    

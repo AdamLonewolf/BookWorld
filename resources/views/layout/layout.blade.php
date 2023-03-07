@@ -13,7 +13,12 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{URL::to('css/bootstrap.min.css')}} " rel="stylesheet" />
         <link href="{{URL::to('css/style.css')}} " rel="stylesheet" />
-        
+        <!--Carousel-->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  
+
     <style>
         .bd-placeholder-img {
           font-size: 1.125rem;
@@ -65,6 +70,20 @@
           white-space: nowrap;
           -webkit-overflow-scrolling: touch;
         }
+
+        .swiper {
+      width: 100%;
+      height: 70%;
+    }
+
+    .swiper-slide {
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
         </style>
     </head>
     <body>
@@ -74,5 +93,25 @@
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
        <!-- Core theme JS-->
        <script src="{{URL::to('js/script.js')}}"></script>
+       <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+       <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          rewind:true,
+          autoplay: {
+          delay:2500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+     
    </body>
 </html>

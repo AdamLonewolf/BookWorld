@@ -15,6 +15,7 @@ class Auteur extends Model
     protected $fillable = [
         'nom',
         'biographie',
+        'image'
     ];
 
      public function oeuvres(){
